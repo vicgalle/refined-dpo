@@ -37,23 +37,18 @@ Inside each `generate_data.ipynb` file, you will find the exact prompts for each
 * The review prompt.
 
 
-## Model Distillation (SFT)
+## 2. Data scoring
 
-Once you have generated the synthetic data, you can finetune the model over a training split of the synthetic data. You may filter the data first using the reward scores of the revised and original sample (acceptance step in the paper). This is recommended as it improves the results over the test set of prompts.
+To score the previous synthetic data using the external reward model, just execute the following notebook configuring the paths inside:
 
-Run the notebook [`run_distillation.ipynb`](run_distillation.ipynb) to self-distil the model on the synthetic data generated in the previous seep. The notebook uses the `sentiment` task an example, but it can be easily adapted to the other tasks.
-
-### Citation
-
-If you find this work useful, please consider citing with
-
+```bash
+reward_score.ipynb
 ```
-@misc{gallego2023distilled,
-      title={Distilled Self-Critique of LLMs with Synthetic Data: a Bayesian Perspective}, 
-      author={Victor Gallego},
-      year={2023},
-      eprint={2312.01957},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
-}
-```
+
+Again, the notebook is located in each of the three experiment folders. It will add keys with the scores for each example in the dataset. Also, in those notebooks you can find the prompt template used to evaluate with the reward model.
+
+
+
+## 3. Student model distillation with rDPO
+
+Code will be uploaded soon!
