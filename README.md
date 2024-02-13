@@ -26,6 +26,8 @@ generate_data.ipynb
 where `generate_data.ipynb` is located in each of the three experiment folders from the paper:
 
 * `safety`: avoiding generating harmful responses.
+* `roleplay-robustness`: robustness against role-playing injection in the user prompt.
+* `sycophancy`: avoid being biased by the user when providing feedback.
 
 
 Inside each `generate_data.ipynb` file, you will find the exact prompts for each experiment, in particular:
